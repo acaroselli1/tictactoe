@@ -1,176 +1,158 @@
 <!doctype html>
 <html>
-
-<head>
-	<meta charset="UTF-8">
-	<title>Tic-Tac-Toe</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-	<style>
-		@font-face {
-
-			font-family: "Cartwheel";
-			src: "Cartwheel.otf";
-		}
+	<head>
+		<meta charset="utf-8">
+		<title>Object-Oriented Practice</title>
+		<style>
+			@font-face{
+				
+				font-family: "Cartwheel";
+				src: "Cartwheel.otf";
+			}
 
 
-		body {
+			body {
 
-			font-family: "Cartwheel";
-		}
+				font-family: "Cartwheel";
+			}
 
-		h1 {
-			text-align: center;
-			font-size: 100px;
-		}
+			h1 {
+				text-align:center;
+				font-size:100px;
+			}
 
-		table {
-			border-style: outset;
-			border-collapse: collapse;
-			position: fixed;
-			background: white;
-		}
+			table {	
+				 border-style:outset;
+				 border-collapse: collapse;
+				 position:fixed;
+				 background:white;
+				
+			}
 
-		td {
-			width: 100px;
-			height: 100px;
-			border: thick solid black;
-			background: white;
-			border-style: outset;
-		}
+			td {
+				width: 100px;
+				height: 100px;
+				border: thick solid black;
+			        background:white;
+				border-style:outset;
+			}
+		
+			#gameBoard {
+				
+				margin:5% 40% 6.5% 40%;
 
-		#gameBoard {
+  			}
+						
+			.X {
+				background:url("x.jpg") no-repeat center;
+			}
 
-			margin: 5% 40% 6.5% 40%;
-		}
+			.O {
+				background:url("o.png") no-repeat center center;
+			}
 
-		.X {
-			background: url("x.jpg") no-repeat center;
-		}
+			#newGame {
+				 margin-left:18.9%;
+				 margin-top:23%;
+				 background:red;
+				 font-family:"Cartwheel";
+			}
+			
+			#results{
+				margin-left:75px;
+				margin-right:75px;
+			        font-family:"Cartwheel";
+			}
 
-		.O {
-			background: url("o.png") no-repeat center center;
-		}
+			#startOver{
 
-		#newGame {
+				background:darkblue;
+			        font-family:"Cartwheel";
+			}
 
-			background: red;
-			font-family: "Cartwheel";
-		}
+			#declareWinner {
+			        height:50px;
+				line-height:50px;
+				text-align:center;
+				font-size:40px;
+			        background:white;
+			}
+			
+			body {
+				background:blue;
+			}
+			
+			img {
 
-		#results {
+			   vertical-align:middle;
+			   margin-bottom:5px;
+			}
 
-			font-family: "Cartwheel";
-		}
+			button {
+			
+				height: 35px;
+				font-size: 25px;
+				background:black;
+				color:white;
+				font-family:"Cartwheel";
+				
+			}
+			a {
+				text-decoration:none;
+				color:white;
+			}
+			
+			#tac{
+				color:red;
+			}
+			
+			#toe{
+				color:white;
+			}
 
-		#startOver {
+			#hypen {
 
-			background: darkblue;
-			font-family: "Cartwheel";
-		}
+				color:white;
 
-		#declareWinner {
-			height: 50px;
-			line-height: 50px;
-			text-align: center;
-			font-size: 40px;
-			background: white;
-		}
-
-		body {
-			background: blue;
-		}
-
-		img {
-
-			vertical-align: middle;
-			margin-bottom: 5px;
-		}
-
-		button {
-			margin-top: 45vh;
-			height: 35px;
-			font-size: 25px;
-			background: black;
-			color: white;
-			font-family: "Cartwheel";
-		}
-         
-		.buttons-margin-left{
-			margin-left:20vw;
-		} 
-		a {
-			text-decoration: none;
-			color: white;
-		}
-
-		#tac {
-			color: red;
-		}
-
-		#toe {
-			color: white;
-		}
-
-		#hypen {
-
-			color: white;
-		}
-	</style>
-</head>
-
-<body>
-	<h1>Tic<span id="hypen">-</span><span id="tac">Tac</span>-<span id="toe">Toe</span></h1>
-
-	<div id="declareWinner">Who will win round 1?</div>
-	<div id="gameBoard">
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Tic<span id="hypen">-</span><span id="tac">Tac</span>-<span id="toe">Toe</span></h1>
+		
+		<div id = "declareWinner">Who will win round 1?</div>
+		<div id = "gameBoard">
 		<table>
 			<tr>
-				<td id="1"></td>
-				<td id="2"></td>
-				<td id="3"></td>
+				<td id ="1"></td><td id ="2"></td><td id ="3"></td>
+				
+
+
+			</tr>
+			<tr>
+
+				<td id ="4"></td><td id="5"></td><td id ="6"></td>
 
 
 
 			</tr>
 			<tr>
 
-				<td id="4"></td>
-				<td id="5"></td>
-				<td id="6"></td>
-
-
-
-			</tr>
-			<tr>
-
-				<td id="7"></td>
-				<td id="8"></td>
-				<td id="9"></td>
-
+				<td id ="7"></td><td id="8"></td><td id="9"></td>
+				
 
 
 			</tr>
-
+		
 		</table>
-	</div>
-	<div class="buttons-margin-left">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-2">
-				</div>
-				<div class="col-xs-8">
-					<button id="newGame">New Game</button>
-					<button id="results">Series Score</button>
-					<button id="startOver">New Series</button>
-				</div>
-				<div class="col-xs-2">
-				</div>
-			</div>
 		</div>
-	</div>
-	<audio id="winSound" src="Ding-ding-ding-sound.mp3"></audio>
-	<audio id="song" src="Mozart.mp3"></audio>
-	<script src="tictactoe.js"></script>
-</body>
-
+		<div>
+		<button id ="newGame">New Game</button>
+		<button id = "results">Series Score</button>
+		<button id = "startOver">New Series</button>
+		</div>
+		<audio id = "winSound" src ="Ding-ding-ding-sound.mp3"></audio>
+		<audio id = "song" src ="Mozart.mp3"></audio>
+		<script src="tictactoe.js"></script>
+	</body>
 </html>
